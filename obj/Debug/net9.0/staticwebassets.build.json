@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "MD34dIfJfxrLWcg2oISrkiMEoTiA+dY2SRQ/kUcS2R0=",
+  "Source": "authsystem.api",
+  "BasePath": "_content/authsystem.api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

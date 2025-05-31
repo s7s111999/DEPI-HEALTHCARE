@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Doctor's Calendar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fc;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .navbar {
+      background-color: #0d47a1;
+      padding: 0.75rem 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .navbar-brand img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.4rem;
+      color: #ffffff !important;
+      display: flex;
+      align-items: center;
+    }
+    .nav-link {
+      color: #ffffff !important;
+      margin-left: 1rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #dce1f1 !important;
+      transform: scale(1.05);
+    }
+    .page-header {
+      margin-top: 30px;
+      color: #0d47a1;
+      font-size: 2.5rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .page-header i {
+      margin-right: 15px;
+      font-size: 2rem;
+    }
+    .calendar-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+    .calendar-header {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .calendar-header i {
+      cursor: pointer;
+      font-size: 1.8rem;
+    }
+    .calendar-body {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      font-size: 1rem;
+      text-align: center;
+    }
+    .calendar-day {
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      position: relative;
+    }
+    .calendar-day:hover {
+      background-color: #e0e7ff;
+    }
+    .appointment-status {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .scheduled {
+      background-color: #ffe082;
+      padding: 3px 6px;
+      border-radius: 5px;
+      color: #0d47a1;
+    }
+    .completed {
+      background-color: #81c784;
+      padding: 3px 6px;
+      border-radius: 5px;
+      color: #0d47a1;
+    }
+    .cancelled {
+      background-color: #e57373;
+      padding: 3px 6px;
+      border-radius: 5px;
+      color: #0d47a1;
+    }
+    .status-icon {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+    .tooltip-inner {
+      max-width: 200px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="image/a_modern_logo_for_image_.png" alt="HealthPortal Logo">
+        HealthPortal
+      </a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <i class="bi bi-calendar3"></i> Doctor's Calendar
+    </div>
+
+    <!-- Calendar Navigation -->
+    <div class="calendar-container">
+      <div class="calendar-header">
+        <i class="bi bi-chevron-left"></i>
+        <span>May 2025</span>
+        <i class="bi bi-chevron-right"></i>
+      </div>
+    </div>
+
+    <!-- Calendar Body -->
+    <div class="calendar-body">
+      <div class="calendar-day" data-bs-toggle="tooltip" data-bs-placement="top" title="Scheduled Appointment with John Doe">
+        <div>Mon 1</div>
+        <i class="bi bi-calendar-check status-icon"></i>
+        <div class="appointment-status scheduled">Scheduled</div>
+      </div>
+      <div class="calendar-day" data-bs-toggle="tooltip" data-bs-placement="top" title="Completed Appointment with Mary Jane">
+        <div>Tue 2</div>
+        <i class="bi bi-check-circle status-icon"></i>
+        <div class="appointment-status completed">Completed</div>
+      </div>
+      <div class="calendar-day" data-bs-toggle="tooltip" data-bs-placement="top" title="Cancelled Appointment with Robert Ray">
+        <div>Wed 3</div>
+        <i class="bi bi-x-circle status-icon"></i>
+        <div class="appointment-status cancelled">Cancelled</div>
+      </div>
+      <div class="calendar-day" data-bs-toggle="tooltip" data-bs-placement="top" title="Scheduled Appointment with Emily Clark">
+        <div>Thu 4</div>
+        <i class="bi bi-calendar-check status-icon"></i>
+        <div class="appointment-status scheduled">Scheduled</div>
+      </div>
+      <div class="calendar-day" data-bs-toggle="tooltip" data-bs-placement="top" title="Completed Appointment with Tom Green">
+        <div>Fri 5</div>
+        <i class="bi bi-check-circle status-icon"></i>
+        <div class="appointment-status completed">Completed</div>
+      </div>
+      <div class="calendar-day" data-bs-toggle="tooltip" data-bs-placement="top" title="Cancelled Appointment with Sarah Lee">
+        <div>Sat 6</div>
+        <i class="bi bi-x-circle status-icon"></i>
+        <div class="appointment-status cancelled">Cancelled</div>
+      </div>
+      <div class="calendar-day" data-bs-toggle="tooltip" data-bs-placement="top" title="Scheduled Appointment with Alex Brown">
+        <div>Sun 7</div>
+        <i class="bi bi-calendar-check status-icon"></i>
+        <div class="appointment-status scheduled">Scheduled</div>
+      </div>
+      <!-- Add more days here... -->
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Initialize tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  </script>
+</body>
+</html>

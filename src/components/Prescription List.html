@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prescription List</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f4f6fb;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .navbar {
+      background-color: #0d47a1;
+      padding: 0.75rem 1rem;
+    }
+    .navbar-brand {
+      color: #fff !important;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+    .navbar-brand img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    .page-header {
+      margin-top: 30px;
+      color: #0d47a1;
+      font-size: 2rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .page-header i {
+      margin-right: 10px;
+    }
+    .filter-bar {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 20px;
+    }
+    .table th {
+      background-color: #dce4f1;
+    }
+    .action-icons i {
+      margin-right: 10px;
+      color: #0d47a1;
+      cursor: pointer;
+    }
+    .action-icons i:hover {
+      color: #0a3570;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="image/a_modern_logo_for_image_.png" alt="Logo" />
+      HealthPortal
+    </a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="page-header">
+    <i class="bi bi-prescription"></i> Prescription List
+  </div>
+
+  <div class="filter-bar">
+    <div class="input-group">
+      <span class="input-group-text"><i class="bi bi-funnel"></i></span>
+      <select class="form-select">
+        <option selected>Fulfillment Status (All)</option>
+        <option>Fulfilled</option>
+        <option>Pending</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+      <select class="form-select">
+        <option selected>Sort by Date</option>
+        <option>Newest First</option>
+        <option>Oldest First</option>
+      </select>
+    </div>
+  </div>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th><i class="bi bi-person-fill"></i> Patient</th>
+        <th><i class="bi bi-person-badge-fill"></i> Doctor</th>
+        <th><i class="bi bi-capsule"></i> Medication</th>
+        <th><i class="bi bi-clock-history"></i> Frequency</th>
+        <th><i class="bi bi-calendar-event"></i> Date</th>
+        <th><i class="bi bi-check-circle"></i> Status</th>
+        <th><i class="bi bi-tools"></i> Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><i class="bi bi-person-circle"></i> John Doe</td>
+        <td><i class="bi bi-person-vcard"></i> Dr. Smith</td>
+        <td>Amoxicillin</td>
+        <td>3x/day</td>
+        <td>2025-05-12</td>
+        <td><i class="bi bi-check2-circle text-success"></i> Fulfilled</td>
+        <td class="action-icons">
+          <i class="bi bi-eye-fill" title="View"></i>
+          <i class="bi bi-printer-fill" title="Print"></i>
+          <i class="bi bi-x-circle" title="Mark Unfulfilled"></i>
+        </td>
+      </tr>
+      <tr>
+        <td><i class="bi bi-person-circle"></i> Mary Jane</td>
+        <td><i class="bi bi-person-vcard"></i> Dr. Adams</td>
+        <td>Ibuprofen</td>
+        <td>2x/day</td>
+        <td>2025-05-10</td>
+        <td><i class="bi bi-clock text-warning"></i> Pending</td>
+        <td class="action-icons">
+          <i class="bi bi-eye-fill" title="View"></i>
+          <i class="bi bi-printer-fill" title="Print"></i>
+          <i class="bi bi-check-circle-fill text-success" title="Mark Fulfilled"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

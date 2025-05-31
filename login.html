@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #007bff, #5f9df7);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .login-card {
+      background-color: #ffffff;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .login-logo {
+      width: 150px;
+      height: auto;
+      margin-bottom: 25px;
+      animation: fadeInLogo 1.2s ease-in-out;
+    }
+
+    @keyframes fadeInLogo {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .form-control {
+      border-radius: 10px;
+    }
+
+    .btn-primary {
+      border-radius: 10px;
+      font-weight: 500;
+    }
+
+    .form-label {
+      font-weight: 500;
+    }
+
+    .login-header {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 25px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-card">
+    <!-- Login Logo -->
+    <img src="image/login_logo.png" alt="Login Logo" class="login-logo img-fluid" />
+
+    <!-- Heading with Icon -->
+    <div class="login-header">
+      <i class="bi bi-person-circle me-2 text-primary"></i> Welcome Back
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm">
+      <div class="mb-3 text-start">
+        <label for="email" class="form-label"><i class="bi bi-envelope-fill me-1"></i> Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" required />
+      </div>
+      <div class="mb-4 text-start">
+        <label for="password" class="form-label"><i class="bi bi-lock-fill me-1"></i> Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter your password" required />
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+  </div>
+
+  <script>
+    // عند الضغط على زر تسجيل الدخول
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // يمنع الإرسال التقليدي
+      // هنا يمكن إضافة تحقق من البيانات لاحقًا
+      window.location.href = "dashboard.html"; // الانتقال إلى صفحة Dashboard
+    });
+  </script>
+
+</body>
+</html>
